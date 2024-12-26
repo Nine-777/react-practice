@@ -3,6 +3,15 @@ import "./App.css";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
 
+import axios from 'axios'; 
+
+axios.get('https://jsonplaceholder.typicode.com/posts/1')
+  .then(res => {
+    console.log(res.data);
+  })
+  .catch(error => {
+  });
+
 function App() {
   return (
     <>
