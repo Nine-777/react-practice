@@ -1,0 +1,42 @@
+# ビルド関連
+dist
+build
+coverage
+
+# 依存関係
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 環境設定
+.env
+.env.*
+*.local
+
+# エディタ設定
+.vscode
+.idea
+
+# バージョン管理
+.git
+.gitignore
+
+# ドキュメント
+README.md
+LICENSE
+*.md
+
+# ログ
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# テスト関連
+**/__tests__/**
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
