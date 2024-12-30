@@ -1,5 +1,5 @@
 // ---- Components ----
-import SubmitButton from "./SubmitButton";
+import SubmitButton from './SubmitButton';
 
 export default function Comments() {
   return (

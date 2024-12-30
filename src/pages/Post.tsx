@@ -1,5 +1,5 @@
 // ---- Component ----
-import Comments from "../components/Comments";
+import Comments from '../components/Comments';
 
 export default function Post() {
   return (
