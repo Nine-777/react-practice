@@ -1,9 +1,10 @@
 // ---- Components ----
 import SubmitButton from './SubmitButton';
+import SectionContainer from './SectionContainer';
 
 export default function Comments() {
   return (
-    <section>
+    <SectionContainer>
       <h3>コメント一覧</h3>
       <ol>
         <li>コメント１</li>
@@ -15,6 +16,6 @@ export default function Comments() {
         <textarea name="#" id="#"></textarea>
         <SubmitButton />
       </form>
-    </section>
+    </SectionContainer>
   );
 }
