@@ -27,6 +27,12 @@ README.md
 LICENSE
 *.md
 
+# 設定ファイル
+vite.config.ts
+tailwind.config.js
+tsconfig.json
+eslint.config.js
+
 # ログ
 *.log
 npm-debug.log*
