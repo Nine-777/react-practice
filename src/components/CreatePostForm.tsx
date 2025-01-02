@@ -1,7 +1,6 @@
 // ---- MUI ----
 import { Box, Typography, TextField, Button } from '@mui/material';
 // ---- Components ----
-import SectionContainer from './SectionContainer';
 // ---- API ----
 import createPost, { CreatePostRequest } from '../api/createPost';
 
@@ -30,7 +29,7 @@ export default function CreatePostForm() {
   };
 
   return (
-    <SectionContainer>
+    <>
       <Typography component="h2">新規投稿</Typography>
       <Box component="form">
         <TextField id="title" label="タイトル" />
@@ -39,6 +38,6 @@ export default function CreatePostForm() {
           投稿
         </Button>
       </Box>
-    </SectionContainer>
+    </>
   );
 }
