@@ -26,7 +26,9 @@ export default function Post() {
 
   return (
     <article>
-      <PostDescription postDetail={postDetail} />
+      <SectionContainer>
+        <PostDescription postDetail={postDetail} />
+      </SectionContainer>
       <SectionContainer>
         <CommentList />
         <CreateCommentForm />
