@@ -7,18 +7,15 @@ export type CreatePostRequest = {
 
 /**
  * 投稿作成API実行処理
- * @param request 
- * @returns 
+ * @param request
+ * @returns
  */
 export const createPost = async (request: CreatePostRequest): Promise<AxiosResponse> => {
-  const response = await axios.post(
-    'https://jsonplaceholder.typicode.com/posts',
-    {
-      userId: 1,
-      title: request.title,
-      body: request.body
-    }
-  );
+  const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
+    userId: 1,
+    title: request.title,
+    body: request.body,
+  });
   return response;
 };
 

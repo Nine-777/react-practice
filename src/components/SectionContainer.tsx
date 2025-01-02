@@ -1,5 +1,5 @@
 // ---- MUI ----
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 
 interface Props {
   children: React.ReactNode;
