@@ -1,8 +1,10 @@
 // ---- React ----
 import { useState, useEffect } from 'react';
 // ---- Component ----
-import Comments from '../components/Comments';
 import PostDescription from '../components/PostDescription';
+import CommentList from '../components/CommentList';
+import CreateCommentForm from '../components/CreateCommentForm';
+import SectionContainer from '../components/SectionContainer';
 // ---- API ----
 import fetchPostDetail, { PostDetailResponse } from '../api/fetchPostDetail';
 
@@ -25,7 +27,10 @@ export default function Post() {
   return (
     <article>
       <PostDescription postDetail={postDetail} />
-      <Comments />
+      <SectionContainer>
+        <CommentList />
+        <CreateCommentForm />
+      </SectionContainer>
     </article>
   );
 }
