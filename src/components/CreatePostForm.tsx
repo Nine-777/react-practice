@@ -12,11 +12,11 @@ export default function CreatePostForm() {
     const funcApi = async () => {
       try {
           // APIで使用する項目を抽出＆設定
-          let createPostTitle = document.getElementById('title') as HTMLInputElement;
-          let createPostBody = document.getElementById('body') as HTMLInputElement;
+          let title = document.getElementById('title') as HTMLInputElement;
+          let body = document.getElementById('body') as HTMLInputElement;
           const createPostRequest: CreatePostRequest = {
-            title: createPostTitle.value,
-            body: createPostBody.value
+            title: title.value,
+            body: body.value
           }
           console.log(createPostRequest);
           // 投稿作成API実行処理
