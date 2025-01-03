@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css';
 // ---- Components ----
-import Home from "./pages/Home";
-import Post from "./pages/Post";
+import Home from './pages/Home';
+import Post from './pages/Post';
 
 function App() {
   return (
@@ -11,8 +11,9 @@ function App() {
       </header>
       <main>
         <p>
-        後続タスクでReactRouterを設定したい。<br />
-        今は未設定なので「投稿一覧」と「投稿詳細」を同一ページに並べて表示。
+          後続タスクでReactRouterを設定したい。
+          <br />
+          今は未設定なので「投稿一覧」と「投稿詳細」を同一ページに並べて表示。
         </p>
         <Home />
         <Post />
