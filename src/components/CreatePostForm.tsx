@@ -1,6 +1,5 @@
 // ---- MUI ----
 import { Box, Typography, TextField, Button } from '@mui/material';
-// ---- Components ----
 // ---- API ----
 import createPost, { CreatePostRequest } from '../api/createPost';
 
