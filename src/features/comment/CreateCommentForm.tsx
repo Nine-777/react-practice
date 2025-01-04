@@ -1,5 +1,5 @@
-// ---- Components ----
-import SubmitButton from './SubmitButton';
+// ---- Compoents ----
+import FormButton from "../../components/button/FormButton";
 
 export default function CreateCommentForm() {
   return (
@@ -7,7 +7,7 @@ export default function CreateCommentForm() {
       <h3>新規コメント</h3>
       <form action="#">
         <textarea name="#" id="#"></textarea>
-        <SubmitButton />
+        <FormButton label="送信" />
       </form>
     </>
   );

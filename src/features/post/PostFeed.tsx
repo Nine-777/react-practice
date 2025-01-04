@@ -1,7 +1,7 @@
 import React from 'react';
-import { Post } from '../types/api.ts';
-import Card from './Card.tsx';
-import Heading from './Heading.tsx';
+import { Post } from '../../types/api.ts';
+import Card from '../../components/card/Card.tsx';
+import Heading from '../../components/typography/Heading.tsx';
 
 type PostFeedProps = {
   posts: Post[];
