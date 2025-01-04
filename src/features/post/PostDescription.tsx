@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 // ---- MUI ----
 import { Box, Button, TextField } from '@mui/material';
 // ---- API ----
-import fetchPostDetail from '../api/fetchPostDetail';
-import updatePost, { UpdatePostRequest } from '../api/updatePost';
+import fetchPostDetail from '../../api/fetchPostDetail';
+import updatePost, { UpdatePostRequest } from '../../api/updatePost';
 
 export default function PostDescription() {
   // 変更前タイトル(保存用変数)
