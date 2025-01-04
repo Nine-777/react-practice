@@ -1,7 +1,7 @@
 // ---- MUI ----
 import { Box, Typography, TextField, Button } from '@mui/material';
 // ---- API ----
-import createPost, { CreatePostRequest } from '../api/createPost';
+import createPost, { CreatePostRequest } from '../../api/createPost';
 
 export default function CreatePostForm() {
   /**
