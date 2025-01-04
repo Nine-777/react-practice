@@ -1,7 +1,7 @@
 import React from 'react';
 import { Post } from '../types/api';
 import { getPostList } from '../api/getPostList';
-import PostFeed from '../components/PostFeed';
+import PostFeed from '../features/post/PostFeed';
 
 const PostList = () => {
   const [posts, setPosts] = React.useState<Post[]>([]);

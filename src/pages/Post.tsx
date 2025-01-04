@@ -1,8 +1,8 @@
 // ---- Component ----
-import PostDescription from '../components/PostDescription';
-import CommentList from '../components/CommentList';
-import CreateCommentForm from '../components/CreateCommentForm';
-import SectionContainer from '../components/SectionContainer';
+import SectionContainer from '../components/layout/SectionContainer';
+import PostDescription from '../features/post/PostDescription';
+import CommentList from '../features/comment/CommentList';
+import CreateCommentForm from '../features/comment/CreateCommentForm';
 
 export default function Post() {
   return (
