@@ -1,44 +1,29 @@
 // ---- React ----
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 // ---- MUI ----
 import { Box, Button, TextField } from '@mui/material';
 // ---- API ----
-import fetchPostDetail from '../../api/fetchPostDetail';
 import updatePost, { UpdatePostRequest } from '../../api/updatePost';
 import deletePost from '../../api/deletePost';
 
-export default function PostDescription() {
+// ---- Types ----
+type Props = {
+  id: number;
+  title: string;
+  body: string;
+};
+
+export default function PostDescription(props: Props) {
   // 変更前タイトル(保存用変数)
   const [saveTitle, setSaveTitle] = useState<string>('');
   // 変更前本文(保存用変数)
   const [saveBody, setSaveBody] = useState<string>('');
   // 編集状態フラグ => true: 編集状態, false: 未編集状態
   const [isEdit, setIsEdit] = useState<boolean>();
-  // 投稿ID
-  const [id, setId] = useState<number>(0);
   // タイトル
-  const [title, setTitle] = useState<string>('');
+  const [title, setTitle] = useState<string>(props.title);
   // 本文
-  const [body, setBody] = useState<string>('');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // FIXME: 一覧画面から詳細画面に遷移する際にprops等で投稿IDを取得後、以下のsetIdに設定する想定
-        setId(1);
-        const response = await fetchPostDetail();
-        // 画面項目に反映
-        setTitle(response.title);
-        setBody(response.body);
-        // 保存用変数に格納
-        setSaveTitle(response.title);
-        setSaveBody(response.body);
-      } catch {
-        console.error('投稿が取得できませんでした');
-      }
-    };
-    fetchData();
-  }, []);
+  const [body, setBody] = useState<string>(props.body);
 
   /**
    * キャンセルボタン押下時処理
@@ -59,7 +44,7 @@ export default function PostDescription() {
       try {
         // APIで使用する項目を設定
         const updatePostRequest: UpdatePostRequest = {
-          id: id,
+          id: props.id,
           title: title,
           body: body,
         };
@@ -98,9 +83,9 @@ export default function PostDescription() {
   const onClickDelete = () => {
     const funcApi = async () => {
       try {
-        console.log(id);
+        console.log(props.id);
         // 投稿削除API実行処理
-        await deletePost(id);
+        await deletePost(props.id);
         // FIXME: 一覧画面に遷移するルーティング処理を実装する
       } catch {
         console.error('削除ボタン押下時処理に失敗しました。');
