@@ -5,6 +5,7 @@ import { Box, Button, TextField } from '@mui/material';
 // ---- API ----
 import fetchPostDetail from '../../api/fetchPostDetail';
 import updatePost, { UpdatePostRequest } from '../../api/updatePost';
+import deletePost from '../../api/deletePost';
 
 export default function PostDescription() {
   // 変更前タイトル(保存用変数)
@@ -91,6 +92,23 @@ export default function PostDescription() {
     setIsEdit(true);
   };
 
+  /**
+   * 削除ボタン押下時処理
+   */
+  const onClickDelete = () => {
+    const funcApi = async () => {
+      try {
+        console.log(id);
+        // 投稿削除API実行処理
+        await deletePost(id);
+        // FIXME: 一覧画面に遷移するルーティング処理を実装する
+      } catch {
+        console.error('削除ボタン押下時処理に失敗しました。');
+      }
+    };
+    funcApi();
+  };
+
   return (
     <>
       <h2>投稿の詳細画面</h2>
@@ -105,7 +123,7 @@ export default function PostDescription() {
         // 未編集状態の場合
         <Box>
           <Button onClick={() => onClickEdit()}>編集</Button>
-          <Button>削除</Button>
+          <Button onClick={() => onClickDelete()}>削除</Button>
         </Box>
       )}
       <TextField
