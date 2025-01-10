@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Post } from '../types/api';
 import { getPostList } from '../api/getPostList';
 import PostFeed from '../features/post/PostFeed';
 
 const PostList = () => {
-  const [posts, setPosts] = React.useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getPostList();
