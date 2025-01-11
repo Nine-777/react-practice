@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Typography, TextField } from '@mui/material';
 import FormButton from '../../components/button/FormButton';
 import updatePost, { UpdatePostRequest } from '../../api/updatePost';
