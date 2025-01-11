@@ -2,7 +2,7 @@ import './App.css';
 // ---- Components ----
 import Home from './pages/Home';
 import Post from './pages/Post';
-import PostList from './pages/PostList.tsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
 function App() {
   return (
@@ -11,9 +11,12 @@ function App() {
         <h1>React Practice</h1>
       </header>
       <main>
-        <Home />
-        <PostList />
-        <Post />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/:id" element={<Post />} />
+          </Routes>
+        </Router>
       </main>
     </>
   );

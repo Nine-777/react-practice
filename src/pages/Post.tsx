@@ -5,30 +5,35 @@ import SectionContainer from '../components/layout/SectionContainer';
 import PostDescription from '../features/post/PostDescription';
 import CommentList from '../features/comment/CommentList';
 import CreateCommentForm from '../features/comment/CreateCommentForm';
+import { useParams } from 'react-router';
 // ---- API ----
 import fetchPostDetail, { PostDetailResponse } from '../api/fetchPostDetail';
 
 export default function Post() {
+  const { id } = useParams<{ id: string }>();
+
   const [postDetail, setPostDetail] = useState<PostDetailResponse>();
   useEffect(() => {
     const fetchData = async () => {
+      if (!id) {
+        console.error('投稿IDが見つかりません');
+        return;
+      }
       try {
-        // FIXME: 一覧画面から詳細画面に遷移する際にprops等で投稿IDを取得後、以下のfetchPostDetailに設定する想定
-        const response = await fetchPostDetail();
+        const response = await fetchPostDetail(id);
         setPostDetail(response);
       } catch {
         console.error('投稿が取得できませんでした');
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <article>
       <SectionContainer>
         {postDetail ? (
-          // FIXME: 一覧画面から詳細画面に遷移する際に取得した投稿IDをidに設定
-          <PostDescription id={1} title={postDetail.title} body={postDetail.body} />
+          <PostDescription id={Number(id)} title={postDetail.title} body={postDetail.body} />
         ) : (
           <></>
         )}

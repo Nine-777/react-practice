@@ -5,7 +5,7 @@ import updatePost, { UpdatePostRequest } from '../../api/updatePost';
 import deletePost from '../../api/deletePost';
 
 type Props = {
-  id: number;
+  id: number | undefined;
   title: string;
   body: string;
 };

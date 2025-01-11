@@ -7,9 +7,9 @@ export type PostDetailResponse = {
   body: string;
 };
 
-export const fetchPostDetail = async (): Promise<PostDetailResponse> => {
+export const fetchPostDetail = async (id: string): Promise<PostDetailResponse> => {
   const response = await axios.get<PostDetailResponse>(
-    'https://jsonplaceholder.typicode.com/posts/1',
+    `https://jsonplaceholder.typicode.com/posts/${id}`,
   );
 
   return response.data;
