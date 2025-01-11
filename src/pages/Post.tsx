@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import SectionContainer from '../components/layout/SectionContainer';
 import PostDescription from '../features/post/PostDescription';
 import CommentList from '../features/comment/CommentList';
-import CreateCommentForm from '../features/comment/CreateCommentForm';
 import { Link, useParams } from 'react-router';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // ---- API ----
@@ -52,7 +51,6 @@ export default function Post() {
       </SectionContainer>
       <SectionContainer>
         <CommentList />
-        <CreateCommentForm />
       </SectionContainer>
     </article>
   );
