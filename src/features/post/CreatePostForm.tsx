@@ -14,8 +14,8 @@ export default function CreatePostForm() {
     const funcApi = async () => {
       try {
         // APIで使用する項目を抽出＆設定
-        let title = document.getElementById('title') as HTMLInputElement;
-        let body = document.getElementById('body') as HTMLInputElement;
+        const title = document.getElementById('title') as HTMLInputElement;
+        const body = document.getElementById('body') as HTMLInputElement;
         const createPostRequest: CreatePostRequest = {
           title: title.value,
           body: body.value,

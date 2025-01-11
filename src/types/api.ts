@@ -10,4 +10,4 @@ export type User = {
   name: string; // 名前
   username: string; // ユーザー名
   email: string; // メールアドレス
-}
+};
