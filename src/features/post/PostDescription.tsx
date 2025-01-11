@@ -8,7 +8,7 @@ import deletePost from '../../api/deletePost';
 
 // ---- Types ----
 type Props = {
-  id: number;
+  id: number | undefined;
   title: string;
   body: string;
 };

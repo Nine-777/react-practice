@@ -2,7 +2,7 @@ import './App.css';
 // ---- Components ----
 import Home from './pages/Home';
 import Post from './pages/Post';
-import PostList from './pages/PostList.tsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
 function App() {
   return (
@@ -11,14 +11,12 @@ function App() {
         <h1>React Practice</h1>
       </header>
       <main>
-        <p>
-          後続タスクでReactRouterを設定したい。
-          <br />
-          今は未設定なので「投稿一覧」と「投稿詳細」を同一ページに並べて表示。
-        </p>
-        <Home />
-        <PostList />
-        <Post />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts/:id" element={<Post />} />
+          </Routes>
+        </Router>
       </main>
     </>
   );
