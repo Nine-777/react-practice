@@ -1,12 +1,9 @@
-// ---- React ----
-import { useState } from 'react';
-// ---- MUI ----
-import { Box, Button, TextField } from '@mui/material';
-// ---- API ----
+import React, { useState } from 'react';
+import { Box, Typography, TextField } from '@mui/material';
+import FormButton from '../../components/button/FormButton';
 import updatePost, { UpdatePostRequest } from '../../api/updatePost';
 import deletePost from '../../api/deletePost';
 
-// ---- Types ----
 type Props = {
   id: number;
   title: string;
@@ -94,38 +91,52 @@ export default function PostDescription(props: Props) {
     funcApi();
   };
 
+  const buttons = isEdit
+    ? [
+        { label: 'キャンセル', onClick: onClickCancel },
+        { label: '更新', onClick: onClickUpdate },
+      ]
+    : [
+        { label: '編集', onClick: onClickEdit },
+        { label: '削除', onClick: onClickDelete },
+      ];
+
   return (
     <>
-      <h2>投稿の詳細画面</h2>
-      <p>投稿の内容</p>
-      {isEdit ? (
-        // 編集状態の場合
-        <Box>
-          <Button onClick={() => onClickCancel()}>キャンセル</Button>
-          <Button onClick={() => onClickUpdate()}>更新</Button>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '100%',
+          mb: 2,
+        }}
+      >
+        <Typography variant="h6">ユーザ名</Typography>
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          {buttons.map((button, index) => (
+            <FormButton key={index} label={button.label} handleClickButton={button.onClick} />
+          ))}
         </Box>
-      ) : (
-        // 未編集状態の場合
-        <Box>
-          <Button onClick={() => onClickEdit()}>編集</Button>
-          <Button onClick={() => onClickDelete()}>削除</Button>
-        </Box>
-      )}
+      </Box>
       <TextField
         id="title"
         label="タイトル"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         disabled={!isEdit}
+        fullWidth
+        sx={{ mb: 2 }}
       />
       <TextField
         id="body"
         label="本文"
         value={body}
         multiline
-        rows={15}
         onChange={(e) => setBody(e.target.value)}
         disabled={!isEdit}
+        fullWidth
+        sx={{ mb: 2 }}
       />
     </>
   );

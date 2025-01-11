@@ -15,7 +15,12 @@ type Props = {
 
 const FormButton = ({ label, icon = 'send', handleClickButton, ...props }: Props) => {
   return (
-    <Button variant="contained" endIcon={ICON_MAP[icon]} onClick={handleClickButton} {...props}>
+    <Button
+      variant="contained"
+      endIcon={icon ? ICON_MAP[icon] : undefined}
+      onClick={handleClickButton}
+      {...props}
+    >
       {label}
     </Button>
   );
