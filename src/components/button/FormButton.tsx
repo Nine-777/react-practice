@@ -10,11 +10,12 @@ const ICON_MAP = {
 type Props = {
   label: string;
   icon?: keyof typeof ICON_MAP;
+  handleClickButton: () => void;
 };
 
-const FormButton = ({ label, icon = 'send' }: Props) => {
+const FormButton = ({ label, icon = 'send', handleClickButton, ...props }: Props) => {
   return (
-    <Button variant="contained" endIcon={ICON_MAP[icon]}>
+    <Button variant="contained" endIcon={ICON_MAP[icon]} onClick={handleClickButton} {...props}>
       {label}
     </Button>
   );

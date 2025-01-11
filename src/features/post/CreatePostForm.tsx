@@ -1,5 +1,8 @@
 // ---- MUI ----
-import { Box, Typography, TextField, Button } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import TextField from '../../components/form/TextField';
+import FormButton from '../../components/button/FormButton.tsx';
+
 // ---- API ----
 import createPost, { CreatePostRequest } from '../../api/createPost';
 
@@ -11,8 +14,8 @@ export default function CreatePostForm() {
     const funcApi = async () => {
       try {
         // APIで使用する項目を抽出＆設定
-        let title = document.getElementById('title') as HTMLInputElement;
-        let body = document.getElementById('body') as HTMLInputElement;
+        const title = document.getElementById('title') as HTMLInputElement;
+        const body = document.getElementById('body') as HTMLInputElement;
         const createPostRequest: CreatePostRequest = {
           title: title.value,
           body: body.value,
@@ -28,13 +31,25 @@ export default function CreatePostForm() {
   };
 
   return (
-    <>
-      <Typography component="h2">新規投稿</Typography>
-      <Box component="form">
-        <TextField id="title" label="タイトル" />
-        <TextField id="body" label="本文" multiline rows={1} />
-        <Button onClick={() => onClickPost()}>投稿</Button>
-      </Box>
-    </>
+    <Grid container spacing={2}>
+      <Grid size={3}>
+        <TextField id="title" label="タイトル" fullWidth />
+      </Grid>
+      <Grid size={7}>
+        <TextField id="body" label="本文" fullWidth />
+      </Grid>
+      <Grid size={2}>
+        <FormButton
+          onClick={onClickPost}
+          icon="send"
+          label="投稿"
+          sx={{
+            height: '100%',
+          }}
+          size="small"
+          fullWidth
+        />
+      </Grid>
+    </Grid>
   );
 }
