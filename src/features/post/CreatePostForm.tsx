@@ -40,7 +40,7 @@ export default function CreatePostForm() {
       </Grid>
       <Grid size={2}>
         <FormButton
-          onClick={onClickPost}
+          handleClickButton={onClickPost}
           icon="send"
           label="投稿"
           sx={{
