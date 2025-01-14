@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "build": "vite build && cp -r dist docs",
     "rebuild": "vite build && rm -R docs && cp -r dist docs",
-    "git": "git add . && git commit && git push origin main"
+    "git": "git add . && git commit && git push origin main",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
