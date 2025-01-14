@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://nine-777.github.io/react-practice",
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -12,8 +11,7 @@
     "preview": "vite preview",
     "build": "vite build && cp -r dist docs",
     "rebuild": "vite build && rm -R docs && cp -r dist docs",
-    "git": "git add . && git commit && git push origin main",
-    "deploy": "gh-pages -d dist"
+    "git": "git add . && git commit && git push origin main"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
