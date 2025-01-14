@@ -11,7 +11,7 @@ function App() {
         <h1>React Practice</h1>
       </header>
       <main>
-        <Router>
+        <Router basename="/react-practice">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/posts/:id" element={<Post />} />
