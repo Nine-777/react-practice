@@ -37,7 +37,7 @@ export default function Post() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            color: 'white',
+            color: 'black',
             textDecoration: 'none',
           }}
         >
