@@ -11,6 +11,9 @@ type Props = {
   label: string;
   icon?: keyof typeof ICON_MAP;
   handleClickButton: () => void;
+  sx?: object;
+  size?: 'small' | 'medium' | 'large';
+  fullWidth?: boolean;
 };
 
 const FormButton = ({ label, icon = 'send', handleClickButton, ...props }: Props) => {
