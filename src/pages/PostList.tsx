@@ -26,6 +26,9 @@ const PostList = () => {
           }),
         );
 
+        // データを降順に並び替え
+        postsWithUser.sort((a, b) => b.id - a.id);
+
         setPosts(postsWithUser);
       } catch {
         console.error('データの取得に失敗しました');
