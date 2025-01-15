@@ -100,7 +100,6 @@ export default function CreatePostForm({ posts }: CreatePostFormProps) {
       <Grid size={2}>
         <FormButton
           handleClickButton={onClickPost}
-          icon="send"
           label="投稿"
           sx={{
             height: '100%',

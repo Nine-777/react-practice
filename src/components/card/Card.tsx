@@ -3,7 +3,7 @@ import { Card as MuiCard, CardContent } from '@mui/material';
 type CardProps = {
   marginBottom?: number; // マージンボトムをオプショナルで追加
   children: React.ReactNode;
-}
+};
 
 export default function Card({ marginBottom = 2, children }: CardProps) {
   return (
