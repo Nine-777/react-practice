@@ -13,7 +13,7 @@ export const getUser = async (userId: number): Promise<User> => {
     email: userData.email,
   };
 
-  console.log('getUser', extractedUser);
+  console.log('getUser:' + extractedUser.username);
 
   return extractedUser;
 };
