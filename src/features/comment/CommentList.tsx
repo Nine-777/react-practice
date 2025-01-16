@@ -1,12 +1,32 @@
-export default function Comments() {
+// ---- API ----
+import { Comment } from '../../types/api';
+// ---- MUI ----
+import { Box } from '@mui/material';
+// ---- Component ----
+import Heading from '../../components/typography/Heading';
+import Card from '../../components/card/Card';
+import Title from '../../components/card/Title';
+import Body from '../../components/card/Body';
+
+type Props = {
+  id: string | undefined;
+  comments: Comment[] | undefined;
+};
+
+export default function Comments(props: Props) {
   return (
     <>
-      <h3>コメント一覧</h3>
-      <ol>
-        <li>コメント１</li>
-        <li>コメント２</li>
-        <li>コメント３</li>
-      </ol>
+      <Heading level="h6" label="コメント一覧" align="left" />
+      {props.comments?.slice(0, 10).map((comment) => {
+        return (
+          <Card>
+            <Box sx={{ maxWidth: 800 }}>
+              <Title level="title-md" label={comment.name} />
+              <Body level="body-sm" label={comment.body} />
+            </Box>
+          </Card>
+        );
+      })}
     </>
   );
 }

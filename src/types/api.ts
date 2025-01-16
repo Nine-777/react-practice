@@ -11,3 +11,11 @@ export type User = {
   username: string; // ユーザー名
   email: string; // メールアドレス
 };
+
+export type Comment = {
+  postId: number; // 投稿ID
+  id: number; // コメントID
+  name: string; // 名前
+  email: string; // メールアドレス
+  body: string; // 本文
+};
