@@ -6,6 +6,7 @@ import deletePost from '../../api/deletePost';
 
 type Props = {
   id: number | undefined;
+  userName: string | undefined;
   title: string;
   body: string;
 };
@@ -112,7 +113,7 @@ export default function PostDescription(props: Props) {
           mb: 2,
         }}
       >
-        <Typography variant="h6">ユーザ名</Typography>
+        <Typography variant="h6">{props.userName}</Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
           {buttons.map((button, index) => (
             <FormButton key={index} label={button.label} handleClickButton={button.onClick} />
