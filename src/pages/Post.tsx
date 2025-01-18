@@ -1,5 +1,7 @@
 // ---- React ----
 import { useState, useEffect } from 'react';
+// ---- MUI ----
+import { Box } from '@mui/material';
 // ---- Component ----
 import SectionContainer from '../components/layout/SectionContainer';
 import PostDescription from '../features/post/PostDescription';
@@ -41,7 +43,7 @@ export default function Post() {
   }, [id]);
 
   return (
-    <article>
+    <Box className="post-main-box">
       <SectionContainer>
         <Link
           to={`/`}
@@ -68,6 +70,6 @@ export default function Post() {
       <SectionContainer>
         <CommentList id={id} comments={comments} />
       </SectionContainer>
-    </article>
+    </Box>
   );
 }
