@@ -1,7 +1,5 @@
 // ---- API ----
 import { Comment } from '../../types/api';
-// ---- MUI ----
-import { Box } from '@mui/material';
 // ---- Component ----
 import Heading from '../../components/typography/Heading';
 import Card from '../../components/card/Card';
@@ -20,10 +18,8 @@ export default function Comments(props: Props) {
       {props.comments?.slice(0, 10).map((comment) => {
         return (
           <Card>
-            <Box sx={{ maxWidth: 800 }}>
-              <Title level="title-md" label={comment.name} />
-              <Body level="body-sm" label={comment.body} />
-            </Box>
+            <Title level="title-md" label={comment.name} />
+            <Body level="body-sm" label={comment.body} />
           </Card>
         );
       })}

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+// ---- MUI ----
+import { Box } from '@mui/material';
 // ---- Types ----
 import { Post, User } from '../types/api';
 // ---- API ----
@@ -64,10 +66,12 @@ export default function Home() {
 
   return (
     <>
-      <SectionContainer>
-        <CreatePostForm posts={posts} />
-        <PostFeed posts={posts} />
-      </SectionContainer>
+      <Box className="home-main-box">
+        <SectionContainer>
+          <CreatePostForm posts={posts} />
+          <PostFeed posts={posts} />
+        </SectionContainer>
+      </Box>
     </>
   );
 }
