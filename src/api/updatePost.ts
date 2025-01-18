@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 import { api } from '../lib/api-client.ts';
 
 export type UpdatePostRequest = {
-  id: number | undefined;
+  id: string | undefined;
   title: string;
   body: string;
 };
