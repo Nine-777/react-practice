@@ -6,7 +6,7 @@ import { api } from '../lib/api-client.ts';
  * @param id
  * @returns
  */
-const deletePost = async (id: number | undefined): Promise<AxiosResponse> => {
+const deletePost = async (id: string | undefined): Promise<AxiosResponse> => {
   const response = await api.delete(`/posts/${id}`);
   return response;
 };

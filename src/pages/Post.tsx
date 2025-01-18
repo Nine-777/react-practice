@@ -58,7 +58,7 @@ export default function Post() {
         </Link>
         {postDetail ? (
           <PostDescription
-            id={Number(id)}
+            id={id}
             userName={user?.username}
             title={postDetail.title}
             body={postDetail.body}
